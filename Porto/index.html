@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Porto Pribadi</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+</head>
+<body>
+    <div class="hero-header">
+        <div class="wrapper">
+            <header>
+                <div class="logo">
+                    <i class="fa-solid fa-r"></i>
+                    <div class="logo-text">Ridho Risky</div>
+                </div>
+                <nav>
+                    <div class="togglebtn">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <ul class="navlinks">
+                        <li><a href="#home" class="active">Home</a></li>
+                        <li><a href="#myporto">MyPorto</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </header>
+
+            <div id="home" class="container">
+                <div class="hero-pic">
+                    <img src="images/pp.png" alt="profile pic">
+                </div>
+               <div class="hero-text">
+                <h5>Hi, Myself</h5>
+                <h1>Ridho Risky</h1>
+                 <h5>And I'm a <span class="input">Frontend Developer</span></h5>
+            <p>
+                Hello! I'm Ridho Risky Adhi Nugroho, a student at SMK Telkom Jakarta, majoring in Software Engineering (RPL). My passion lies in front-end development, where I transform design concepts into clean, interactive, and user-friendly digital experiences. I am continuously dedicated to learning new technologies and am eager to contribute my skills to innovative projects.
+            </p>
+                <div class="btn-group">
+                    <a href="assets/CV Ridho.pdf" class="btn active" target="_blank">Download CV</a>
+                </div>
+                        <div class="social">
+                            <a href="https://www.instagram.com/rdongrh"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="#"><i class="fa-brands fa-github"></i></a>
+                            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section id="myporto" class="porto-section">
+        <div class="wrapper">
+            <h2 class="section-title"><span class="blue">My</span> Portfolio</h2>
+            <p class="section-subtitle">Beberapa project yang pernah saya kerjakan</p>
+            
+<div class="porto-grid">
+    <div class="porto-card">
+        <img src="images/projects1.png" alt="Project 1">
+        <h3>Palang Parkir Otomatis dengan Arduino</h3>
+        <p>Proyek ini adalah proyek yang di program dengan arduino, mirip seperti palang parkir otomatis, yang dapat mendeteksi dan membuka pintu secara otomatis.</p>
+    </div>
+
+    <div class="porto-card">
+        <img src="images/projects2.jpg" alt="Project 2">
+        <h3>Aplikasi Kalender Events</h3>
+        <p>Aplikasi kalender untuk mencatat jadwal harian yang dibuat dengan bahasa Dart dan framework Flutter.</p>
+    </div>
+
+    <div class="porto-card">
+        <img src="images/project3.png" alt="Project 3">
+        <h3>Game Tic Tac Toe</h3>
+        <p>Game Tic Tac Toe yang dibuat menggunakan bahasa C# yang di rancang untuk bermain melawan komputer.</p>
+    </div>
+
+    <div class="porto-card">
+        <img src="images/project4.png" alt="Project 4">
+        <h3>KUIZ MATEMATIKA</h3>
+        <p>Aplikasi Kuis Matematika ini merupakan aplikasi desktop sederhana berbasis Windows Forms yang dikembangkan menggunakan bahasa pemrograman C#. Aplikasi ini dirancang untuk melatih pengguna dalam operasi aritmatika dasar, seperti penjumlahan, pengurangan, perkalian, dan Pembagian, dengan fitur waktu yang terbatas.</p>
+    </div>
+
+    <div class="porto-card">
+        <img src="images/project5.png" alt="Project 5">
+        <h3>APK PENGHITUNG JUMLAH HARI</h3>
+        <p>Aplikasi ini adalah program sederhana berbasis Java Swing yang berfungsi untuk menghitung jumlah hari dalam suatu bulan pada tahun tertentu. Aplikasi ini memungkinkan pengguna untuk memilih bulan dan memasukkan tahun yang diinginkan, lalu menampilkan jumlah hari pada bulan tersebut..</p>
+    </div>
+</div>
+
+    <section id="contact">
+    <div class="contact-container">
+        <h2>Contact <span>Me</span></h2>
+        <form action="#" class="contact-form">
+            <div class="form-row">
+                <input type="text" placeholder="Full Name" required>
+                <input type="email" placeholder="Email Address" required>
+            </div>
+            <div class="form-row">
+                <input type="text" placeholder="Mobile Number" required>
+                <input type="text" placeholder="Email Subject" required>
+            </div>
+            <textarea placeholder="Your Message" rows="6" required></textarea>
+            <button type="submit" class="btn">Send Message</button>
+        </form>
+    </div>
+</section>
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.10/typed.min.js"></script>
+<script>
+    var typed = new Typed(".input", {
+        strings: ["Frontend Developer", "UX Designer", "Web Developer"],
+        typeSpeed: 70,
+        backSpeed: 55,
+        loop: true
+    });
+
+    const toggleBtn = document.querySelector(".togglebtn");
+    const navLinks = document.querySelector(".navlinks");
+
+    toggleBtn.addEventListener("click", () => {
+        navLinks.classList.toggle("open");
+    });
+
+    const navItems = document.querySelectorAll(".navlinks li a");
+
+    navItems.forEach(item => {
+        item.addEventListener("click", function () {
+            navItems.forEach(link => link.classList.remove("active"));
+            this.classList.add("active");
+        });
+    });
+
+    const sections = document.querySelectorAll("section");
+
+    window.addEventListener("scroll", () => {
+        let current = "";
+
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop - 100;
+            const sectionHeight = section.clientHeight;
+
+            if (pageYOffset >= sectionTop && pageYOffset < sectionTop + sectionHeight) {
+                current = section.getAttribute("id");
+            }
+        });
+
+        navItems.forEach(link => {
+            link.classList.remove("active");
+            if (link.getAttribute("href") === "#" + current) {
+                link.classList.add("active");
+            }
+            
+        });
+        
+        
+    });
+</script>
+</body>
+</html>
